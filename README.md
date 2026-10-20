@@ -7,7 +7,7 @@ Footer-badge for nettsider levert av Ut av Boksen. Ett script, én HTML-tag – 
 **1. Scriptet (én gang per nettsted)**
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/kevojuice/uab-badge@1/uab-badge.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/gh/kevojuice/uab-badge@main/uab-badge.min.js" defer></script>
 ```
 
 - WordPress: WPCode → ny snippet, type HTML, plassering «Site Wide Footer».
@@ -36,7 +36,9 @@ Teksten «Utviklet av:» arver skrifttypen og -størrelsen fra nettstedet.
 
 ## Oppdatering
 
-`@1` i script-adressen henter alltid siste 1.x-versjon. Endringer som pushes hit (og tagges `v1.x.y`) går ut til alle nettsteder automatisk – jsDelivr cacher i opptil 12 timer (kan tømmes på https://www.jsdelivr.com/tools/purge).
+Scriptet hentes fra `@main`, så alt som pushes til `main` går ut til alle nettsteder automatisk (jsDelivr cacher i opptil 12 timer – tøm cachen på https://www.jsdelivr.com/tools/purge for å få det ut med en gang).
+
+Vil du heller låse versjoner: lag en Release `v1.0.0` på GitHub og bytt adressen til `@1` – da får sidene bare oppdateringer som tagges `v1.x.y`.
 
 Bygg etter endringer:
 

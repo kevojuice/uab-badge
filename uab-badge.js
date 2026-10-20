@@ -3,7 +3,7 @@
  * https://github.com/kevojuice/uab-badge
  *
  * Bruk:
- *   <script src="https://cdn.jsdelivr.net/gh/kevojuice/uab-badge@1/uab-badge.min.js" defer></script>
+ *   <script src="https://cdn.jsdelivr.net/gh/kevojuice/uab-badge@main/uab-badge.min.js" defer></script>
  *   <uab-badge theme="light"></uab-badge>   (lys bakgrunn)
  *   <uab-badge theme="dark"></uab-badge>    (mørk bakgrunn)
  *
