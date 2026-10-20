@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>uab-badge – test</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;font-family:Montserrat,system-ui,sans-serif;font-size:14px}
+  .row{display:flex;justify-content:space-between;align-items:center;padding:90px 40px 40px;gap:20px}
+  .light{background:#f4f1ea;color:#2f2a27}
+  .white{background:#fff;color:#2f2a27}
+  .dark{background:#3d342e;color:#f4f1ea}
+  .navy{background:#0d2b46;color:#fff}
+  small{opacity:.6}
+</style>
+<script src="uab-badge.js" defer></script>
+</head>
+<body>
+  <div class="row white"><small>© 2026 Kunde AS · theme="light"</small><uab-badge theme="light" align="right"></uab-badge></div>
+  <div class="row light"><small>© 2026 Kunde AS · theme="light"</small><uab-badge theme="light" align="right"></uab-badge></div>
+  <div class="row dark"><small>© 2026 Sodai AS · theme="dark"</small><uab-badge theme="dark" align="right"></uab-badge></div>
+  <div class="row navy"><small>© 2026 Kunde AS · theme="dark"</small><uab-badge theme="dark" align="right"></uab-badge></div>
+</body>
+</html>
