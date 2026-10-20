@@ -1,5 +1,5 @@
 /*!
- * Ut av Boksen – «Utviklet av»-badge  v1.0.0
+ * Ut av Boksen – «Utviklet av»-badge  v1.0.1
  * https://github.com/kevojuice/uab-badge
  *
  * Bruk:
@@ -16,7 +16,7 @@
   'use strict';
   if (window.customElements && customElements.get('uab-badge')) return;
 
-  var VERSION = '1.0.0';
+  var VERSION = '1.0.1';
   var LINK = 'https://utavboksen.no/nettside';
   var LABEL = 'Utviklet av:';
   var TOOLTIP = 'Skal vi jobbe sammen?';
@@ -53,8 +53,8 @@
     '--uab-label:#2d3337;--uab-t1:#016676;--uab-t2:#03aca8;' +
     '--uab-ic-a:#03aca8;--uab-ic-b:#062430;--uab-ic-c:#016676;' +
     '--uab-tip-bg:#062430;--uab-tip-fg:#03aca8;--uab-size:30px}' +
-    ':host([theme="dark"]){--uab-label:rgba(255,255,255,.82);--uab-t1:#5fd0cc;--uab-t2:#ffffff;' +
-    '--uab-ic-a:#03aca8;--uab-ic-b:#ffffff;--uab-ic-c:#5fd0cc;' +
+    // Mørk versjon: logoen beholder originalfargene – bare teksten og tooltipen endres
+    ':host([theme="dark"]){--uab-label:rgba(255,255,255,.82);' +
     '--uab-tip-bg:#ffffff;--uab-tip-fg:#016676}' +
     'a{position:relative;display:inline-flex;align-items:center;gap:10px;color:var(--uab-label);' +
     'text-decoration:none;font:inherit;font-size:inherit;-webkit-tap-highlight-color:transparent}' +
