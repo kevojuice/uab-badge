@@ -1,16 +1,18 @@
 /*!
- * Ut av Boksen – «Utviklet av»-badge  v1.0.1
+ * Ut av Boksen – "Utviklet av" (built by) credit badge  v1.0.1
  * https://github.com/kevojuice/uab-badge
  *
- * Bruk:
+ * Usage:
  *   <script src="https://cdn.jsdelivr.net/gh/kevojuice/uab-badge@main/uab-badge.min.js" defer></script>
- *   <uab-badge theme="light"></uab-badge>   (lys bakgrunn)
- *   <uab-badge theme="dark"></uab-badge>    (mørk bakgrunn)
+ *   <uab-badge theme="light"></uab-badge>   (light background)
+ *   <uab-badge theme="dark"></uab-badge>    (dark background)
  *
- * Valgfrie attributter:
- *   align="left|center|right"  – plassering av tooltip-pilen (standard: center)
- *   size="30"                  – høyde på ikonet i px (standard 30)
- *   nofollow                   – legger til rel="nofollow" på lenken
+ * Optional attributes:
+ *   align="left|center|right"  – where the tooltip is anchored (default: center)
+ *   size="30"                  – icon height in px (default 30)
+ *   nofollow                   – adds rel="nofollow" to the link
+ *
+ * The visible text is intentionally Norwegian (LABEL / TOOLTIP below).
  */
 (function () {
   'use strict';
@@ -18,10 +20,10 @@
 
   var VERSION = '1.0.1';
   var LINK = 'https://utavboksen.no/nettside';
-  var LABEL = 'Utviklet av:';
-  var TOOLTIP = 'Skal vi jobbe sammen?';
+  var LABEL = 'Utviklet av:';          // "Built by:" (Norwegian, shown on the page)
+  var TOOLTIP = 'Skal vi jobbe sammen?'; // "Shall we work together?" (Norwegian, shown on hover)
 
-  // Logo-SVG-er fra Ut av Boksen (fargene styres med CSS-variabler, så de kan byttes per tema)
+  // Ut av Boksen logo SVGs (fills come from CSS variables so they can be themed)
   var ICON =
     '<svg class="icon" viewBox="0 0 77.91 89.71" aria-hidden="true" focusable="false">' +
     '<polygon class="a" points="17.04 12.64 36.07 23.85 19.05 33.52 0 22.64 17.04 12.64"/>' +
@@ -53,7 +55,7 @@
     '--uab-label:#2d3337;--uab-t1:#016676;--uab-t2:#03aca8;' +
     '--uab-ic-a:#03aca8;--uab-ic-b:#062430;--uab-ic-c:#016676;' +
     '--uab-tip-bg:#062430;--uab-tip-fg:#03aca8;--uab-size:30px}' +
-    // Mørk versjon: logoen beholder originalfargene – bare teksten og tooltipen endres
+    // Dark theme: the logo keeps its original colours – only the label and tooltip change
     ':host([theme="dark"]){--uab-label:rgba(255,255,255,.82);' +
     '--uab-tip-bg:#ffffff;--uab-tip-fg:#016676}' +
     'a{position:relative;display:inline-flex;align-items:center;gap:10px;color:var(--uab-label);' +
@@ -83,7 +85,7 @@
   function buildHref() {
     var host = (location.hostname || '').replace(/^www\./, '');
     var sep = LINK.indexOf('?') === -1 ? '?' : '&';
-    return LINK + sep + 'utm_source=' + encodeURIComponent(host || 'ukjent') +
+    return LINK + sep + 'utm_source=' + encodeURIComponent(host || 'unknown') +
       '&utm_medium=referral&utm_campaign=utviklet-av';
   }
 
