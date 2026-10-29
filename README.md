@@ -41,6 +41,12 @@ add_shortcode( 'uab_badge', function ( $atts ) {
 	$size  = '' !== $a['size'] ? ' size="' . absint( $a['size'] ) . '"' : '';
 	return '<uab-badge theme="' . $theme . '" align="' . $align . '"' . $size . '></uab-badge>';
 } );
+
+// Let <uab-badge> through wp_kses, so the tag also survives theme option fields that strip unknown HTML
+add_filter( 'wp_kses_allowed_html', function ( $tags ) {
+	$tags['uab-badge'] = array( 'theme' => true, 'align' => true, 'size' => true, 'nofollow' => true, 'style' => true );
+	return $tags;
+} );
 ```
 
 Then place `[uab_badge theme="dark" align="right"]` in the footer:
@@ -52,6 +58,7 @@ Then place `[uab_badge theme="dark" align="right"]` in the footer:
 | Classic theme with footer widgets | Appearance → Widgets → footer area | **Shortcode** block |
 | Astra / Kadence / Blocksy | Customize → Footer Builder | **HTML** element |
 | Flatsome | Customize → Footer → Bottom Text Secondary | text field |
+| TheFox | TheFox → Options → Footer → **Footer message** | paste the **HTML tag** (this field doesn't run shortcodes). Needs the `wp_kses_allowed_html` filter above, otherwise the tag is stripped on save |
 | Divi | Theme Builder → Global Footer | **Code** module |
 | WPBakery / others | footer template | **Raw HTML** / **Text Block** |
 
