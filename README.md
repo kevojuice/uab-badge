@@ -2,6 +2,9 @@
 
 A footer credit badge for websites built by [Ut av Boksen](https://utavboksen.no). One script and one HTML tag – works in WordPress (any theme or builder), Webflow and plain HTML. It is a web component with Shadow DOM, so the site's theme CSS can't break it.
 
+**Install guide (step by step, with live status per site):** https://claude.ai/artifact/XGymEuPM1goiJbNHhuigSE
+**Sites using the badge:** [SITES.md](SITES.md) – every client site, split into WordPress and Webflow.
+
 The badge shows **"Utviklet av:"** + the Ut av Boksen logo with a continuously spinning icon, and a tooltip **"Skal vi jobbe sammen?"** on hover. The visible text is intentionally Norwegian; everything else (code, docs) is in English.
 
 ## Install
@@ -58,6 +61,8 @@ Then place `[uab_badge theme="dark" align="right"]` in the footer:
 | Classic theme with footer widgets | Appearance → Widgets → footer area | **Shortcode** block |
 | Astra / Kadence / Blocksy | Customize → Footer Builder | **HTML** element |
 | Flatsome | Customize → Footer → Bottom Text Secondary | text field |
+| WoodMart | Theme Settings → Footer → Copyrights text (or the footer HTML Block) | paste the **HTML tag** |
+| BeTheme / Cesis | Theme Options → Footer → Copyright text | paste the **HTML tag** |
 | TheFox | TheFox → Options → Footer → **Footer message** | paste the **HTML tag** (this field doesn't run shortcodes). Needs the `wp_kses_allowed_html` filter above, otherwise the tag is stripped on save |
 | Divi | Theme Builder → Global Footer | **Code** module |
 | WPBakery / others | footer template | **Raw HTML** / **Text Block** |
@@ -73,8 +78,11 @@ add_action( 'wp_footer', function () {
 
 ### Webflow
 
-- Site settings → Custom code → **Footer code**: the `<script>` tag.
-- Footer: an **Embed** element with `<uab-badge theme="dark" align="right"></uab-badge>`.
+1. Site settings → Custom code → **Footer code**: paste the `<script>` tag and save (custom code needs a paid site plan).
+2. In the Designer, open the footer (usually a component, so it's edited once) and add a **Code Embed** to the bottom row: `<uab-badge theme="dark" align="right"></uab-badge>`.
+3. Publish. The badge only renders on the published site, not in the Designer canvas.
+
+For the Elfag electrician sites, also add it to the **Elfag Master Template** so new clones get it automatically.
 
 ## Options
 
