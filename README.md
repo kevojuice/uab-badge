@@ -3,7 +3,6 @@
 A footer credit badge for websites built by [Ut av Boksen](https://utavboksen.no). One script and one HTML tag – works in WordPress (any theme or builder), Webflow and plain HTML. It is a web component with Shadow DOM, so the site's theme CSS can't break it.
 
 **Install guide (step by step, with live status per site):** https://claude.ai/artifact/XGymEuPM1goiJbNHhuigSE
-**Sites using the badge:** [SITES.md](SITES.md) – every client site, split into WordPress and Webflow.
 
 The badge shows **"Utviklet av:"** + the Ut av Boksen logo with a continuously spinning icon, and a tooltip **"Skal vi jobbe sammen?"** on hover. The visible text is intentionally Norwegian; everything else (code, docs) is in English.
 
